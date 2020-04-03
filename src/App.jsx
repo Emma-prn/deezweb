@@ -16,17 +16,17 @@ function App() {
         <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/"><i className="fas fa-search"></i> Rechercher un titre</Link>
+                    <Link className="nav-link" to="/deezweb"><i className="fas fa-search"></i> Rechercher un titre</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/favorites"><i className="fas fa-heartbeat"></i> Mes favoris</Link>
+                    <Link className="nav-link" to="/deezweb/favorites"><i className="fas fa-heartbeat"></i> Mes favoris</Link>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<Route path="/" component={Home} exact/>
-<Route path="/favorites" component={Favoris}/>
+<Route path="/deezweb" component={Home} exact/>
+<Route path="/deezweb/favorites" component={Favoris}/>
 </Router>
   );
 }
