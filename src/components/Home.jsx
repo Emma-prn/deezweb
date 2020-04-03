@@ -5,20 +5,19 @@ import Track from './Track';
 import FavService from '../FavService';
  
 function Home(props) {
-
+    // On créer les constantes qui prennent en compte les changements
     const [title, setTitle] = useState('');
     const [orderBy, setOrderBy] = useState('ALBUM_ASC');
     const [musics, setMusics] = useState([]);
-
+    // Fonction si le titre change
     function changeTitle(e){
         setTitle(e.target.value);
     }
+    // Fonction si l'ordre de classement change
     function changeOrderBy(e){
         setOrderBy(e.target.value);
     }
-    /*function changeMusics(e){
-        setMusics(e.target.value);
-    }*/
+    // Fonction de recherche, on va chercher les musiques correspondantes au titre et à l'ordre donné
     function onSearch(e){
         e.preventDefault();
         const encodedTitle = encodeURIComponent(title);
@@ -29,6 +28,7 @@ function Home(props) {
             setMusics(musics);
         });
     }
+    // Fonction pour les favoris
     function onFavorites(music){
         FavService.toggleFavorite(music);
         setMusics([...musics]);

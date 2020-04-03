@@ -4,12 +4,12 @@ import Track from './Track';
 
 function Favoris(props) {
     const [musics, setMusics] = useState(FavService.getFavoritesFromStorage());
-
+    // On récupère les favoris stocké dans le local storage
     function onFavorites(music){
         FavService.toggleFavorite(music);
         setMusics(FavService.getFavoritesFromStorage());
     }
-
+    // On les affiche grâce à la function map et en utilisant le composant Track
     return (
             <main className="container mt-3">
                 <h1>Mes favoris</h1>

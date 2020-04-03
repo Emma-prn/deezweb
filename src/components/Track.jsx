@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Track(props) {
+    // On récupére la props fournie dans une variable
     const music = props.music;
     const isFavorite = props.isFavorite;
     const favBtnClass = isFavorite ? 'btn-outine-danger' : 'btn-danger';
@@ -10,6 +11,7 @@ function Track(props) {
             props.onClick(music);
         }
     }
+    // On affiche les musiques avec la couverture de l'album, le nom de l'artiste, le titre de l'album et le titre de la musique. Le bouton permet soit ajouter ou de retirer des favoris
     return (
         <div className="card w-50" style={{flex: 'initial'}}>
             <div className="card-body text-left">
